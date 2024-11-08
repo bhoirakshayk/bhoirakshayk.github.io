@@ -1,24 +1,94 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Section Titles */
+section h2 {
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
     color: #333;
 }
-header {
-    background-color: #0073e6;
+
+/* About Section */
+#about {
+    padding: 20px;
+    background: #e2e2e2;
+    margin-top: 20px;
+}
+
+#about ul {
+    list-style: none;
+    padding: 10px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #e8e8e8;
+    border-radius: 5px;
+}
+
+.project h3 {
+    color: #333;
+}
+
+/* Experience Section */
+#experience {
+    padding: 20px;
+    background: #e2e2e2;
+}
+
+/* Contact Section */
+#contact {
+    padding: 20px;
+    background: #333;
     color: #fff;
-    padding: 1em;
     text-align: center;
 }
-section {
-    padding: 1em;
-    margin: 1em 0;
+
+#contact a {
+    color: #ffd700;
+    text-decoration: none;
 }
-h2 {
-    color: #0073e6;
-}
-footer {
-    background-color: #f1f1f1;
-    padding: 1em;
-    text-align: center;
+
+#contact a:hover {
+    text-decoration: underline;
 }
