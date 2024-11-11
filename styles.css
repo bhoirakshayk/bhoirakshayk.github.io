@@ -13,6 +13,25 @@ body {
     margin: 20px;
 }
 
+/* General Section Styling */
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Header */
 header {
     background-color: #333;
@@ -43,27 +62,30 @@ section h2 {
 
 /* About Section */
 #about {
-    padding: 20px;
     background: #e2e2e2;
-    margin-top: 20px;
 }
 
 #about ul {
     list-style: none;
     padding: 10px;
+    line-height: 1.8;
 }
 
 /* Projects Section */
 #projects {
-    padding: 20px;
     background: #f9f9f9;
 }
 
 .project {
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     background: #e8e8e8;
-    border-radius: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.03);
 }
 
 .project h3 {
@@ -72,13 +94,11 @@ section h2 {
 
 /* Experience Section */
 #experience {
-    padding: 20px;
     background: #e2e2e2;
 }
 
 /* Contact Section */
 #contact {
-    padding: 20px;
     background: #333;
     color: #fff;
     text-align: center;
@@ -91,4 +111,20 @@ section h2 {
 
 #contact a:hover {
     text-decoration: underline;
+}
+
+/* Fade-in on Scroll */
+@media (min-width: 768px) {
+    section {
+        animation: slideIn 0.6s ease forwards;
+        opacity: 0;
+        transform: translateY(30px);
+        visibility: hidden;
+    }
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
