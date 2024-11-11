@@ -11,40 +11,24 @@ body {
     background-color: #f4f4f4;
     color: #333;
     margin: 20px;
-}
-
-/* General Section Styling */
-section {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideIn 0.6s ease forwards;
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    padding: 0 20px;
 }
 
 /* Header */
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 30px 0;
     text-align: center;
+    font-size: 1.8em;
 }
 
 header nav a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 header nav a:hover {
@@ -52,79 +36,80 @@ header nav a:hover {
 }
 
 /* Section Titles */
+section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
 section h2 {
     border-bottom: 2px solid #333;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 1.8em;
     color: #333;
 }
 
 /* About Section */
 #about {
-    background: #e2e2e2;
+    background-color: #e2e2e2;
 }
 
-#about ul {
-    list-style: none;
-    padding: 10px;
-    line-height: 1.8;
+#about p,
+#about ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 /* Projects Section */
 #projects {
-    background: #f9f9f9;
+    background-color: #f9f9f9;
 }
 
 .project {
     margin-bottom: 20px;
     padding: 15px;
     background: #e8e8e8;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.project:hover {
-    transform: scale(1.03);
+    border-radius: 5px;
 }
 
 .project h3 {
     color: #333;
+    font-size: 1.4em;
 }
 
 /* Experience Section */
 #experience {
-    background: #e2e2e2;
+    background-color: #e2e2e2;
+    font-size: 1.2em;
 }
 
 /* Contact Section */
 #contact {
-    background: #333;
+    background-color: #333;
     color: #fff;
     text-align: center;
+    font-size: 1.2em;
 }
 
 #contact a {
     color: #ffd700;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #contact a:hover {
     text-decoration: underline;
 }
 
-/* Fade-in on Scroll */
-@media (min-width: 768px) {
-    section {
-        animation: slideIn 0.6s ease forwards;
-        opacity: 0;
-        transform: translateY(30px);
-        visibility: hidden;
-    }
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-section.visible {
+.fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
 }
