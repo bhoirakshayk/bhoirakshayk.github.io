@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.8;
     background-color: #f4f4f4;
     color: #333;
     margin: 20px;
@@ -36,32 +36,30 @@ header nav a:hover {
 }
 
 /* Section Titles */
-
-/* CSS for initial hidden state and transition effect */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* section {
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 8px;
-} */
-
 section h2 {
     border-bottom: 2px solid #333;
     margin-bottom: 20px;
     padding-bottom: 10px;
     font-size: 1.8em;
     color: #333;
+}
+
+/* Section Styles */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 30px;  /* Increased padding for better spacing */
+    margin-bottom: 40px;  /* Increased margin between sections */
+    word-wrap: break-word;  /* Ensures long words break */
+    font-size: 1.1em;  /* Slightly increased font size */
+    line-height: 1.7;  /* Increased line height for readability */
+}
+
+/* Visible State (when the section comes into view) */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* About Section */
@@ -77,7 +75,8 @@ section h2 {
 
 /* Projects Section */
 #projects {
-    background-color: #f9f9f9;
+    padding: 20px;
+    background: #f9f9f9;
 }
 
 .project {
@@ -85,11 +84,45 @@ section h2 {
     padding: 15px;
     background: #e8e8e8;
     border-radius: 5px;
+    transition: all 0.3s ease-in-out;  /* Smooth transition for hover */
+    overflow: hidden;
 }
 
-.project h3 {
-    color: #333;
-    font-size: 1.4em;
+/* Title Style */
+.project-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;  /* Smooth size transition */
+}
+
+/* Initially hide project details */
+.project-details {
+    opacity: 0;
+    max-height: 0; /* Hide details initially */
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;  /* Transition for revealing details */
+}
+
+/* Hover Effect for Project */
+.project:hover .project-title {
+    font-size: 2em; /* Increase title size on hover */
+}
+
+.project:hover .project-details {
+    opacity: 1;  /* Reveal project details */
+    max-height: 200px;  /* Reveal details */
+}
+
+/* For Small Screens (Responsive Design) */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 1.2em;  /* Smaller font on mobile */
+    }
+
+    .project-details {
+        font-size: 0.9em;  /* Smaller text for details on mobile */
+    }
 }
 
 /* Experience Section */
@@ -116,7 +149,7 @@ section h2 {
     text-decoration: underline;
 }
 
-/* Fade-in Animation */
+/* Fade-in Animation for Sections */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
